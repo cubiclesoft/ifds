@@ -357,6 +357,7 @@ DATA locations table:
 (2 byte number of full seekable DATA chunks (65,536 bytes each) + 8 byte seekable DATA chunks start position) * num entries
 2 byte last seekable DATA chunk size + 8 byte seekable DATA chunk start position
 4 byte CRC-32
+```
 
 This table must appear immediately after a seekable object.  When appending new max DATA chunks and num entries is 65535 (0xFFFF), merge down until num entries is 52268 (80%).  Maximum data size supported is approximately 280TB.
 
