@@ -399,4 +399,4 @@ Documentation
 * [IFDS class](docs/ifds.md) - The official reference implementation of the Incredibly Flexible Data Storage (IFDS) file format specification.
 * [IFDS specification](docs/ifds_specification.md) - The Incredibly Flexible Data Storage (IFDS) technical specification of the IFDS file format.
 * [IFDS_Text class](docs/ifds_text.md) - One possible implementation of an example replacement format for the classic text file format with nifty features such as support for massive file sizes (up to roughly 280TB) and transparent data compression and decompression.
-* [IFDS_Conf and IFDS_ConfDef classes](docs/ifds_conf.md) - An example implementation of a possible replacement format for configuration files.
+* [IFDS_Conf and IFDS_ConfDef classes](docs/ifds_conf.md) - An example implementation of a possible replacement format for configuration and configuration definition files respectively.
