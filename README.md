@@ -38,15 +38,6 @@ The IFDS PHP reference implementation is actually fairly inefficient due to both
 
 For an apples to oranges comparison, SQLite via PHP PDO on the same hardware can insert approximately 138,000 rows/sec (using transactions and commits) containing the same data into an in-memory SQLite database.  SQLite is approximately 2 times faster than the PHP IFDS reference implementation for bulk insertions.  However, if you need a database, then you should probably use an existing database.
 
-Limitations
------------
-
-* The underlying file system and/or the Operating System may limit the maximum size of a single file to something much less than 2^64.  For example, NTFS limits individual files to 256TB, ext4's limit is 16TB, and XFS' limit is 8EB.  The only known file system to date that supports files up to 2^64 in size is ZFS, but ZFS requires considerably more system resources to run well.
-* The 4.2 billion object limit is due to using 4 byte object IDs.  The limitation is somewhat moot.  Just storing 4.2 billion empty/NULL objects would require about 34.3GB of storage.
-* Page level disk alignment is not currently feasible due to Paging File Cache (PFC) compatibility.  Using a PFC layer is recommended for performance.  PFC is useful for applying transparent disk page encryption/decryption, Hamming codes for automatic error correction, and more.
-* By default, the PHP reference implementation of IFDS attempts to limit estimated RAM usage of the IFDS object cache to around 10MB (configurable).  For files under 10MB, the entire file can be cached in RAM and a structured order can be maintained.  For larger files, data and structures may be stored out of order, which can impact reading I/O performance later.  A PFC layer can help alleviate performance related problems when processing very large files.
-* Interleaved multi-channel data storage can only be written one time, is mostly only written to the end of a file since the size is usually unknown, and can only be read sequentially.  It is ideal for interleaved, multi-channel data that is written exactly one time and read many times (e.g. interleaved audio and video data for a streaming video file format).
-
 Use Cases
 ---------
 
@@ -67,6 +58,15 @@ Here is a short list of ideas for using IFDS:
 * Store and retrieve tiled images in a format similar to Google Maps for efficient memory usage when displaying massive image files.
 
 The possibilities are endless.
+
+Limitations
+-----------
+
+* The underlying file system and/or the Operating System may limit the maximum size of a single file to something much less than 2^64.  For example, NTFS limits individual files to 256TB, ext4's limit is 16TB, and XFS' limit is 8EB.  The only known file system to date that supports files up to 2^64 in size is ZFS, but ZFS requires considerably more system resources to run well.
+* The 4.2 billion object limit is due to using 4 byte object IDs.  The limitation is somewhat moot.  Just storing 4.2 billion empty/NULL objects would require about 34.3GB of storage.
+* Page level disk alignment is not currently feasible due to Paging File Cache (PFC) compatibility.  Using a PFC layer is recommended for performance.  PFC is useful for applying transparent disk page encryption/decryption, Hamming codes for automatic error correction, and more.
+* By default, the PHP reference implementation of IFDS attempts to limit estimated RAM usage of the IFDS object cache to around 10MB (configurable).  For files under 10MB, the entire file can be cached in RAM and a structured order can be maintained.  For larger files, data and structures may be stored out of order, which can impact reading I/O performance later.  A PFC layer can help alleviate performance related problems when processing very large files.
+* Interleaved multi-channel data storage can only be written one time, is mostly only written to the end of a file since the size is usually unknown, and can only be read sequentially.  It is ideal for interleaved, multi-channel data that is written exactly one time and read many times (e.g. interleaved audio and video data for a streaming video file format).
 
 Use Case:  JPEG-PNG-SVG
 -----------------------
