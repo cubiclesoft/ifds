@@ -47,6 +47,27 @@ Limitations
 * By default, the PHP reference implementation of IFDS attempts to limit estimated RAM usage of the IFDS object cache to around 10MB (configurable).  For files under 10MB, the entire file can be cached in RAM and a structured order can be maintained.  For larger files, data and structures may be stored out of order, which can impact reading I/O performance later.  A PFC layer can help alleviate performance related problems when processing very large files.
 * Interleaved multi-channel data storage can only be written one time, is mostly only written to the end of a file since the size is usually unknown, and can only be read sequentially.  It is ideal for interleaved, multi-channel data that is written exactly one time and read many times (e.g. interleaved audio and video data for a streaming video file format).
 
+Use Cases
+---------
+
+Here is a short list of ideas for using IFDS:
+
+* Invent a new, multi-layered image file format.  See "JPEG-PNG-SVG" below.
+* Redesign text files and text editors to handle multi-TB file sizes.  See "Redesign Text Files" below.
+* Replace configuration files with a universally compatible configuration format.  See "Replace Configuration Files" below.
+* Streaming video container for holding multiple interleaved video and audio streams.
+* Executable files that can be easily modified.
+* Custom database-like indexes for large, external files like CSV and JSON-lines.
+* File compression container to replace ZIP archives.
+* A scalable virtual filesystem.
+* Spreadsheet storage for handling unlimited cells.
+* Custom databases.
+* Layer and access IFDS files inside IFDS files inside IFDS files.  IFDS Inception!
+* Bundle documentation in the same file as source code but not inlined inside the source code itself.
+* Store and retrieve tiled images in a format similar to Google Maps for efficient memory usage when displaying massive image files.
+
+The possibilities are endless.
+
 Use Case:  JPEG-PNG-SVG
 -----------------------
 
@@ -370,24 +391,6 @@ See the test suite for example usage of the `IFDS_ConfDef` class, which implemen
 Now every OS just needs to be updated to support the IFDS CONF and IFDS CONF-DEF file formats with both CLI and GUI tools to make it easy and painless to manage application configurations.  Not difficult and most definitely won't cause anyone to get upset at all.
 
 Also, once again, this simple example barely scratches the surface of IFDS.
-
-More Uses
----------
-
-Here is a short list of additional ideas for using IFDS:
-
-* Streaming video container for holding multiple interleaved video and audio streams.
-* Executable files that can be easily modified.
-* Custom database-like indexes for large, external files like CSV and JSON-lines.
-* File compression container to replace ZIP archives.
-* A scalable virtual filesystem.
-* Spreadsheet storage for handling unlimited cells.
-* Custom databases.
-* Layer and access IFDS files inside IFDS files inside IFDS files.  IFDS Inception!
-* Bundle documentation in the same file as source code but not inlined inside the source code itself.
-* Store and retrieve tiled images in a format similar to Google Maps for efficient memory usage when displaying massive image files.
-
-The possibilities are endless.
 
 Documentation
 -------------
