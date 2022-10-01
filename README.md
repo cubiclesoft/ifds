@@ -325,7 +325,7 @@ Metadata
 
 Example implementation usage:
 
-```
+```php
 <?php
 	require_once "support/paging_file_cache.php";
 	require_once "support/ifds.php";
