@@ -278,7 +278,7 @@ Configuration files (e.g. INI, conf) are special, common cases of text files.  T
 * Inconsistent definitions across multiple applications.
 * The signal to noise ratio of "configuration key-values to comments" is always either too low or too high depending on skill level/understanding.  Comments that do exist are generally nonsensical to first-time users and make navigation annoying later on to those who understand the options.
 * Configuration hierarchies are difficult to visualize and generally require spanning configurations across multiple, possibly hundreds to thousands of files (e.g. Nginx config files).  This slows down application startup.
-* Error prone.  A single option or value entered incorrectly results in wasted time, sometimes taking hours of debugging to figure out what went wrong.  Also, in many cases, an invalid entry causes the application to fail to start resulting in downtime.
+* Error prone.  A single option or value entered incorrectly results in wasted time, sometimes taking hours of debugging to figure out what went wrong.  Also, in many cases, an invalid entry causes the application to fail to start, which results in downtime.
 * Each application that interfaces with any given configuration file has to do a lot of extra work to correctly parse each file for both syntax and structure.  Again, this is error prone and likely to break.
 * There are no data type controls/option limits to allow a generic configuration editing tool to be created that works for all applications.
 * No support for binary data.
