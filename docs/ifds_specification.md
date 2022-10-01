@@ -286,6 +286,7 @@ Stores a node for a double-linked list.
 INTERNAL DATA
 4 byte CRC-32
 DATA CHUNKS
+```
 
 When attached to a linked list, the first and last node point at the linked list head ID (if it has one).
 
