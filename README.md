@@ -76,7 +76,7 @@ This use case is a bit contrived but demonstrates combining three different exis
 The JPEG file format:
 
 * Is lossy.  Multiple saves of the image loses more and more information.
-* Consistently produces the same file size for images of the same width, height, and JPEQ quality setting.
+* Consistently produces the same file size for images of the same width, height, and JPEG quality setting.
 * Great at storing photos.  Okay at storing gradients.
 * Terrible at storing line art and text.  Lots of obvious artifacting appears around the lines.  Especially noticeable on solid color backgrounds.
 * Supports millions of colors.
