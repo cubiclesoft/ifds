@@ -1,0 +1,12 @@
+	Once upon a time, there was this crazy guy named Thomas.
+	And he ran a crazy company called CubicleSoft.
+
+	CubicleSoft created awesome software.
+	In PHP.
+
+	It was awesome.
+	Eventually people decided it was so awesome, they parted with some money.
+
+	Don't forget to donate.
+
+	http://cubiclesoft.com/donate/
