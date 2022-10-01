@@ -3,7 +3,7 @@ Incredibly Flexible Data Storage (IFDS) File Format
 
 The Incredibly Flexible Data Storage (IFDS) file format enables the rapid creation of highly scalable and flexible custom file formats.  Create your own customized binary file format with ease with IFDS.
 
-Implementations of the IFDS file format internally handle all of the difficult bookkeeping bits that occur when inventing a brand new file format, which lets software developers focus on more important things like high level design and application development.  See the use-cases and examples below that use the PHP reference implementation (MIT or LGPL, your choice) of the specification to understand what is possible with IFDS!
+Implementations of the [IFDS file format specification](docs/ifds_specification.md) internally handle all of the difficult bookkeeping bits that occur when inventing a brand new file format, which lets software developers focus on more important things like high level design and application development.  See the use-cases and examples below that use the PHP reference implementation (MIT or LGPL, your choice) of the specification to understand what is possible with IFDS!
 
 Features
 --------
