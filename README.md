@@ -5,6 +5,8 @@ The Incredibly Flexible Data Storage (IFDS) file format enables the rapid creati
 
 Implementations of the [IFDS file format specification](docs/ifds_specification.md) internally handle all of the difficult bookkeeping bits that occur when inventing a brand new file format, which lets software developers focus on more important things like high level design and application development.  See the use-cases and examples below that use the PHP reference implementation (MIT or LGPL, your choice) of the specification to understand what is possible with IFDS!
 
+[![Donate](https://cubiclesoft.com/res/donate-shield.png)](https://cubiclesoft.com/donate/) [![Discord](https://img.shields.io/discord/777282089980526602?label=chat&logo=discord)](https://cubiclesoft.com/product-support/github/)
+
 Features
 --------
 
