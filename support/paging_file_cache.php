@@ -414,6 +414,7 @@
 				unset($this->recentpages[$pagepos]);
 				$this->recentpages[$pagepos] = true;
 
+
 				// Copy data up to page size.
 				$x2 = $this->currpos % $this->pagesize;
 				$y2 = strlen($this->pagemap[$pagepos][0]);
@@ -460,6 +461,37 @@
 					$x2 += $size;
 					$this->currpos += $size;
 				}
+
+
+/*
+				// Copy data up to page size.
+				$x2 = $this->currpos % $this->pagesize;
+				$y2 = strlen($this->pagemap[$pagepos][0]);
+				$diff = $this->pagesize - $x2;
+				$size = ($diff <= $y - $x ? $diff : $y - $x);
+				$size2 = ($x2 + $size > $y2 ? $y2 - $x2 : $size);
+
+				$this->pagemap[$pagepos][0] = substr_replace($this->pagemap[$pagepos][0], substr($data, $x, $size), $x2, $size2);
+
+				$x += $size;
+				$x2 += $size;
+				$this->currpos += $size;
+*/
+
+/*
+				// Copy data up to page size.
+				$x2 = $this->currpos % $this->pagesize;
+				$y2 = strlen($this->pagemap[$pagepos][0]);
+				$diff = $this->pagesize - $x2;
+				$size = ($diff <= $y - $x ? $diff : $y - $x);
+				$size2 = ($x2 + $size > $y2 ? $y2 - $x2 : $size);
+
+				str_splice($this->pagemap[$pagepos][0], $x2, $size2, $data, $x, $size);
+
+				$x += $size;
+				$x2 += $size;
+				$this->currpos += $size;
+*/
 
 				if ($this->pagemap[$pagepos][1] === self::PAGING_FILE_PAGE_LOADED)
 				{

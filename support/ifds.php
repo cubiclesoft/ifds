@@ -3419,9 +3419,9 @@
 					// Load chunk.
 					if (!isset($obj->data["chunks"][$obj->data["chunk_num"]]) && !$this->LoadCurrLocationTableChunk($obj))  return array("success" => false, "error" => self::IFDSTranslate("Unable to load the current object data chunk for writing.  Possible data corruption."), "errorcode" => "data_chunk_load_failed", "info" => $obj);
 
-					// Copy data.
 					$cinfo = &$obj->data["chunks"][$obj->data["chunk_num"]];
 
+					// Copy data.
 					$x2 = $obj->data["data_pos"] - $cinfo["data_pos"];
 					$y2 = strlen($cinfo["data"]);
 					$diff = $y2 - $x2;
@@ -3470,6 +3470,22 @@
 						$x2 += $size;
 						$obj->data["data_pos"] += $size;
 					}
+*/
+
+/*
+					// Copy data.
+					$x2 = $obj->data["data_pos"] % 65528;
+					$y2 = strlen($cinfo["data"]);
+					$diff = 65528 - $x2;
+					$size = ($diff <= $y - $x ? $diff : $y - $x);
+					$size2 = ($x2 + $size > $y2 ? $y2 - $x2 : $size);
+
+					str_splice($cinfo["data"], $x2, $size2, $data, $x, $size);
+
+					$x += $size;
+					$x2 += $size;
+					$obj->data["data_pos"] += $size;
+*/
 
 					$obj->data["data_mod"] = true;
 
